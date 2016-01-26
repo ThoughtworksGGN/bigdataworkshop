@@ -16,6 +16,27 @@
         <server>10.15.1.50</server>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>spark</id>
+            <properties>
+                <command.prefix>spark-submit --master yarn</command.prefix>
+                <command.jar>${project.artifactId}-${project.version}.jar</command.jar>
+                <command.class>--class ${class}</command.class>
+                <command.jarclass>${command.class} ${command.jar}</command.jarclass>
+            </properties>
+        </profile>
+        <profile>
+            <id>hadoop</id>
+            <properties>
+                <command.prefix>hadoop</command.prefix>
+                <command.jar>jar ${project.artifactId}-${project.version}.jar</command.jar>
+                <command.class>${class}</command.class>
+                <command.jarclass>${command.jar} ${command.class}</command.jarclass>
+            </properties>
+        </profile>
+    </profiles>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
@@ -87,7 +108,7 @@
                                      todir="${username}@${server}:~/"
                                      trust="true"
                                 />
-                                 <sshexec command="/opt/hadoop-2.6.0/bin/hadoop jar ${project.artifactId}-${project.version}.jar ${class} ${inputDir} ${outputDir} "
+                                 <sshexec command="source /etc/profile; ${command.prefix} ${command.jarclass} ${args}"
                                           host="${server}"
                                           password="${password}"
                                           trust="true"
