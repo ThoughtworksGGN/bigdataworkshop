@@ -44,21 +44,25 @@
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-hdfs</artifactId>
             <version>${ver.hadoop}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-auth</artifactId>
             <version>${ver.hadoop}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-common</artifactId>
             <version>${ver.hadoop}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-core</artifactId>
             <version>${ver.hadoop.core}</version>
+            <scope>provided</scope>
         </dependency>    <!--Spark Dependencies-->
         <dependency>
             <groupId>org.apache.spark</groupId>
@@ -70,11 +74,13 @@
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-streaming-twitter_2.10</artifactId>
             <version>${ver.spark}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency> <!-- Spark streaming dependency -->
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-streaming_2.10</artifactId>
             <version>${ver.spark}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
     <build>
