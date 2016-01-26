@@ -1,4 +1,4 @@
-package com.tw.mrexample;
+package com.tw.example;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;

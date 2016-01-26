@@ -1,4 +1,4 @@
-package com.tw.mrexample;
+package com.tw.example;
 import java.io.IOException;
 import java.util.StringTokenizer;
 

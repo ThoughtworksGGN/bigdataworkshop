@@ -1,4 +1,4 @@
-package com.tw.mrexample;
+package com.tw.example;
 
 
 import org.apache.spark.api.java.function.Function;
