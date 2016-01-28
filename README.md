@@ -1,11 +1,14 @@
 # Bigdataworkshop
 Workshop on crunch and mapreduce for geek night 28th jan
 
+Download Dependencies:
+`mvn clean package`
+
 To run hadoop job use following command :
 
 `mvn clean deploy -Dusername=<user-name> -Dpassword=<password> -Phadoop  -Dclass=<class> -Dargs=<args>`
 
-To run hadoop job use following command :
+To run spark job use following command :
 
 `mvn clean deploy -Dusername=<user-name> -Dpassword=<password> -Pspark  -Dclass=<class> -Dargs=<args>`
 
