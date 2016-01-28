@@ -31,6 +31,10 @@ For example to run SparkExample - Word Count
 
 Some web interfaces to check logs :
 Spark Master Web UI	http://10.133.125.251:8080/
+
 File browser				http://10.133.125.251:50070/explorer.html#/
+
 Application Master	http://10.133.125.251:8088/cluster
+
 Job History server	http://10.133.125.251:19888/jobhistory
+
