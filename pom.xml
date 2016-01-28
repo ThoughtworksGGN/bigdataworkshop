@@ -21,7 +21,7 @@
             <id>spark</id>
             <properties>
                 <class>com.tw.example.SparkExample</class>
-                <command.prefix>spark-submit --master yarn</command.prefix>
+                <command.prefix>spark-submit --master spark://${server}:7077</command.prefix>
                 <command.jar>${project.artifactId}-${project.version}.jar</command.jar>
                 <command.class>--class ${class}</command.class>
                 <command.jarclass>${command.class} ${command.jar}</command.jarclass>

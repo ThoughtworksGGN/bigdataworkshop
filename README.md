@@ -25,3 +25,9 @@ For example to run SparkExample - Word Count
 `mvn clean deploy -Dusername=<user-name> -Dpassword=<password> -Pspark  -Dclass=com.tw.example.SparkExample -Dargs="<input-dir> <output-dir>"`
 
 **Note**: Don't forget to delete output dir before running a MR/Spark job. 
+
+Some web interfaces to check logs :
+Spark Master Web UI	http://10.133.125.251:8080/
+File browser				http://10.133.125.251:50070/explorer.html#/
+Application Master	http://10.133.125.251:8088/cluster
+Job History server	http://10.133.125.251:19888/jobhistory
