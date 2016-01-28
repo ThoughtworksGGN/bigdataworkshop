@@ -37,6 +37,16 @@
                 <command.jarclass>${command.jar} ${command.class}</command.jarclass>
             </properties>
         </profile>
+        <profile>
+            <id>twitter-spark</id>
+            <properties>
+                <class>com.tw.example.TwitterSentimentAnalysis</class>
+                <command.prefix>spark-submit --master local[2]</command.prefix>
+                <command.jar>${project.artifactId}-${project.version}.jar</command.jar>
+                <command.class>--class ${class}</command.class>
+                <command.jarclass>${command.class} ${command.jar}</command.jarclass>
+            </properties>
+        </profile>
     </profiles>
 
     <dependencies>
