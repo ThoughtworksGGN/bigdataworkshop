@@ -12,68 +12,15 @@
         <ver.hadoop>2.6.0</ver.hadoop>
         <ver.hadoop.core>1.2.1</ver.hadoop.core>
         <ver.spark>1.6.0</ver.spark>
-
+        <class>com.tw.example.SparkExample</class>
         <server>10.133.125.251</server>
+        <command.prefix>spark-submit --master spark://${server}:7077</command.prefix>
+        <command.jar>${project.artifactId}-${project.version}.jar</command.jar>
+        <command.class>--class ${class}</command.class>
+        <command.jarclass>${command.class} ${command.jar}</command.jarclass>
     </properties>
 
-    <profiles>
-        <profile>
-            <id>spark</id>
-            <properties>
-                <class>com.tw.example.SparkExample</class>
-                <command.prefix>spark-submit --master spark://${server}:7077</command.prefix>
-                <command.jar>${project.artifactId}-${project.version}.jar</command.jar>
-                <command.class>--class ${class}</command.class>
-                <command.jarclass>${command.class} ${command.jar}</command.jarclass>
-            </properties>
-        </profile>
-        <profile>
-            <id>hadoop</id>
-            <properties>
-                <class>com.tw.example.MRExample</class>
-                <command.prefix>hadoop</command.prefix>
-                <command.jar>jar ${project.artifactId}-${project.version}.jar</command.jar>
-                <command.class>${class}</command.class>
-                <command.jarclass>${command.jar} ${command.class}</command.jarclass>
-            </properties>
-        </profile>
-        <profile>
-            <id>twitter-spark</id>
-            <properties>
-                <class>com.tw.example.TwitterSentimentAnalysis</class>
-                <command.prefix>spark-submit --master local[2]</command.prefix>
-                <command.jar>${project.artifactId}-${project.version}.jar</command.jar>
-                <command.class>--class ${class}</command.class>
-                <command.jarclass>${command.class} ${command.jar}</command.jarclass>
-            </properties>
-        </profile>
-    </profiles>
-
     <dependencies>
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-hdfs</artifactId>
-            <version>${ver.hadoop}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-auth</artifactId>
-            <version>${ver.hadoop}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-common</artifactId>
-            <version>${ver.hadoop}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-core</artifactId>
-            <version>${ver.hadoop.core}</version>
-            <scope>provided</scope>
-        </dependency>    <!--Spark Dependencies-->
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_2.10</artifactId>
