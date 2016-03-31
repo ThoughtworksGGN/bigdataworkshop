@@ -14,7 +14,7 @@
         <ver.spark>1.6.0</ver.spark>
         <class>com.tw.example.SparkExample</class>
         <server>10.133.124.48</server>
-        <command.prefix>/usr/local/spark/bin/spark-submit --master spark://Geeknight:7077</command.prefix>
+        <command.prefix>/usr/local/spark/bin/spark-submit --num-executors 1 --master spark://Geeknight:7077</command.prefix>
         <command.jar>${project.artifactId}-${project.version}.jar</command.jar>
         <command.class>--class ${class}</command.class>
         <command.jarclass>${command.class} ${command.jar}</command.jarclass>
