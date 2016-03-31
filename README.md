@@ -15,10 +15,16 @@ Mvn Command
 `mvn clean deploy -Dusername=<user-name> -Dpassword=<password> -Dclass=com.tw.example.SparkExample -Dargs="<input-dir> <output-dir>"`
 
 For example
-`docker run -v /user/someuser/projects/bigdataworkshop:/local/git achalag/geeknight-spark mvn clean deploy -Dusername=username -Dpassword=somepassword -Dclass=com.tw.example.SparkExample -Dargs="/home/tw/data/tweets /home/tw/data/username/job1"`
+`docker run -v /user/<local-user>/projects/bigdataworkshop:/local/git achalag/geeknight-spark mvn clean deploy -Dusername=<username> -Dpassword=<somepassword> -Dclass=com.tw.example.SparkExample -Dargs="/home/tw/data/tweets /home/tw/data/<username>/job1"`
 
 **Note**: Don't forget to delete output dir before running a Spark job.
 
 Some web interfaces to check logs :
 Spark Master Web UI	http://10.133.124.48:8080/
-FS Web UI	http://10.133.124.48:2222/
+FileSystem Web UI	http://10.133.124.48:8000/
+
+Download Docker image
+http://10.133.124.48:8000/geeknight-spark.tgz
+
+Load Docker image
+docker load < geeknight-spark.tgz
