@@ -1,10 +1,6 @@
 # Bigdataworkshop
 Workshop on spark for geek night 31st March
 
-To run spark job use following command :
-
-`mvn clean deploy -Dusername=<user-name> -Dpassword=<password> -Pspark  -Dclass=<class> -Dargs=<args>`
-
 Description of parameters :-
 
 1. user-name  : User name of the linux user with whom you want to run job
@@ -18,8 +14,11 @@ For example to run SparkExample - Word Count
 Mvn Command
 `mvn clean deploy -Dusername=<user-name> -Dpassword=<password> -Dclass=com.tw.example.SparkExample -Dargs="<input-dir> <output-dir>"`
 
+For example
+`docker run -v /user/someuser/projects/bigdataworkshop:/local/git achalag/geeknight-spark mvn clean deploy -Dusername=username -Dpassword=somepassword -Dclass=com.tw.example.SparkExample -Dargs="/home/tw/data/tweets /home/tw/data/username/job1"`
+
 **Note**: Don't forget to delete output dir before running a Spark job.
 
 Some web interfaces to check logs :
 Spark Master Web UI	http://10.133.124.48:8080/
-
+FS Web UI	http://10.133.124.48:2222/
