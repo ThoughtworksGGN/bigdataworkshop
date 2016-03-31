@@ -20,8 +20,8 @@ public class SentimentDictionary
   private static SentimentDictionary buildDictionary() throws IOException {
     SentimentDictionary sentimentDictionary = new SentimentDictionary();
     BufferedReader br = new BufferedReader(new FileReader(
-      new File(SentimentDictionary.class.getClassLoader().getResource("dictionary.tff").getFile())
-    ));
+      new File("/home/tw/data/dictionary.tff"))
+    );
 
     String line;
 

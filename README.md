@@ -21,10 +21,10 @@ For example
 
 Some web interfaces to check logs :
 Spark Master Web UI	http://10.133.124.48:8080/
-FileSystem Web UI	http://10.133.124.48:8000/
+FileSystem Web UI	http://10.133.124.48:3389/
 
 Download Docker image
-http://10.133.124.48:8000/geeknight-spark.tgz
+http://10.133.124.48:3389/geeknight-spark.tgz
 
 Load Docker image
 docker load < geeknight-spark.tgz
