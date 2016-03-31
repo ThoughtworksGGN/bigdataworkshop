@@ -13,7 +13,7 @@
         <ver.hadoop.core>1.2.1</ver.hadoop.core>
         <ver.spark>1.6.0</ver.spark>
         <class>com.tw.example.SparkExample</class>
-        <server>10.133.125.251</server>
+        <server>10.133.124.48</server>
         <command.prefix>spark-submit --master spark://${server}:7077</command.prefix>
         <command.jar>${project.artifactId}-${project.version}.jar</command.jar>
         <command.class>--class ${class}</command.class>

@@ -13,14 +13,13 @@ Description of parameters :-
 4. args       : arguments needed by class main driver
 
 For example to run SparkExample - Word Count
+`docker run -v <project_dir_path>:/local/git  achalag/geeknight-spark  <mvn_command>`
 
-`mvn clean deploy -Dusername=<user-name> -Dpassword=<password> -Pspark  -Dclass=com.tw.example.SparkExample -Dargs="<input-dir> <output-dir>"`
+Mvn Command
+`mvn clean deploy -Dusername=<user-name> -Dpassword=<password> -Dclass=com.tw.example.SparkExample -Dargs="<input-dir> <output-dir>"`
 
 **Note**: Don't forget to delete output dir before running a Spark job.
 
 Some web interfaces to check logs :
-Spark Master Web UI	http://10.133.125.251:8080/
-File browser				http://10.133.125.251:50070/explorer.html#/
-Application Master	http://10.133.125.251:8088/cluster
-Job History server	http://10.133.125.251:19888/jobhistory
+Spark Master Web UI	http://10.133.124.48:8080/
 
