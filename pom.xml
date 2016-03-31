@@ -14,7 +14,7 @@
         <ver.spark>1.6.0</ver.spark>
         <class>com.tw.example.SparkExample</class>
         <server>10.133.124.48</server>
-        <command.prefix>spark-submit --master spark://${server}:7077</command.prefix>
+        <command.prefix>/usr/local/spark/bin/spark-submit --master spark://Geeknight:7077</command.prefix>
         <command.jar>${project.artifactId}-${project.version}.jar</command.jar>
         <command.class>--class ${class}</command.class>
         <command.jarclass>${command.class} ${command.jar}</command.jarclass>
@@ -73,7 +73,7 @@
                                      todir="${username}@${server}:~/"
                                      trust="true"
                                 />
-                                 <sshexec command="source /etc/profile; ${command.prefix} ${command.jarclass} ${args}"
+                                 <sshexec command="source /usr/local/spark/conf/spark-env.sh; ${command.prefix} ${command.jarclass} ${args}"
                                           host="${server}"
                                           password="${password}"
                                           trust="true"
