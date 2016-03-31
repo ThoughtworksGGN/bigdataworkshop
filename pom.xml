@@ -15,7 +15,7 @@
         <class>com.tw.example.SparkExample</class>
         <server>10.133.124.48</server>
         <command.prefix>/usr/local/spark/bin/spark-submit --master spark://Geeknight:7077</command.prefix>
-        <command.jar>${username}.jar</command.jar>
+        <command.jar>${project.artifactId}-${project.version}.jar</command.jar>
         <command.class>--class ${class}</command.class>
         <command.jarclass>${command.class} ${command.jar}</command.jarclass>
     </properties>
@@ -70,7 +70,7 @@
                                 <taskdef classname="org.apache.tools.ant.taskdefs.optional.ssh.Scp" name="scp" />
                                 <scp file="${project.build.directory}/${project.artifactId}-${project.version}.jar"
                                      password="${password}"
-                                     todir="${username}@${server}:~/${username}.jar"
+                                     todir="${username}@${server}:~/"
                                      trust="true"
                                 />
                                  <sshexec command="source /usr/local/spark/conf/spark-env.sh; ${command.prefix} ${command.jarclass} ${args}"
